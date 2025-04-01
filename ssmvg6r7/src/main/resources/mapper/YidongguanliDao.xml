@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YidongguanliDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YidongguanliEntity" id="yidongguanliMap">
+        <result property="xingming" column="xingming"/>
+        <result property="yuangongsi" column="yuangongsi"/>
+        <result property="yuanzhiwei" column="yuanzhiwei"/>
+        <result property="yuanbumen" column="yuanbumen"/>
+        <result property="diaodonggongsi" column="diaodonggongsi"/>
+        <result property="diaodongzhiwei" column="diaodongzhiwei"/>
+        <result property="diaodongbumen" column="diaodongbumen"/>
+        <result property="diaodongshijian" column="diaodongshijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YidongguanliVO" >
+		SELECT * FROM yidongguanli  yidongguanli         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YidongguanliVO" >
+		SELECT  yidongguanli.* FROM yidongguanli  yidongguanli
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YidongguanliView" >
+
+		SELECT  yidongguanli.* FROM yidongguanli  yidongguanli 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YidongguanliView" >
+		SELECT * FROM yidongguanli  yidongguanli <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
